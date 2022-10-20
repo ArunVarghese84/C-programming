@@ -1,0 +1,36 @@
+/*
+Name: Arun Varghese
+Date: 20/10/22 
+Description: Program to count number of set bits in a given number and print parity
+Sample Input: Enter the number : 7
+Sample Output: Number of set bits = 3
+               Bit parity is Odd
+*/
+
+#include<stdio.h>
+
+int main()
+{
+    int count,num;            //variables for count and number
+    printf("Enter the number :");
+    scanf("%d", &num);    //number is read
+
+    for(count=0;num !=0; num >>= 1)     //loop for counting the bits by bitwise right shifting
+    {
+	if(num & 01)     //checking whether LSB bit is 1
+	{
+	    count++;        //count is incremented as each lsb bit comes 1
+	}
+    }
+    printf("Number of set bits = %d\n", count);     //count is printed
+
+	if(count & 01)      //if the lsb of count is 1, parity is odd
+	{
+	    printf("Bit parity is Odd\n");
+	}
+	else
+	{
+	    printf("Bit parity is Even\n");
+	}
+	return 0;
+}
