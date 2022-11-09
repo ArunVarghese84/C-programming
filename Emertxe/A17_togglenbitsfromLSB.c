@@ -2,8 +2,12 @@
 Name: Arun Varghese
 Date: 02/11/2022 
 Description: Program to toggle 'n' bits from given position of a number
-Sample Input:
-Sample Output:
+Sample Input:Enter the number: 10
+
+             Enter number of bits: 3
+
+             Enter the pos: 5
+Sample Output: Result = 50
 */
 
 
