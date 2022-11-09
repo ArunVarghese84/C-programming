@@ -1,9 +1,10 @@
 /*
 Name: Arun Varghese
 Date: 07/11/2022 
-Description: 
-Sample Input:
-Sample Output:
+Description: Program to implement Circular right shift
+Sample Input:Enter num: 12
+             Enter n : 3
+Sample Output:Result : 10000000 00000000 00000000 00000001
 */
 
 #include <stdio.h>
