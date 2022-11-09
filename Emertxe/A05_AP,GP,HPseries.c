@@ -1,9 +1,13 @@
 /*
 Name: Arun Varghese
-Date: 
-Description: 
-Sample Input:
-Sample Output:
+Date: 17/10/2022
+Description: Program to generate AP, GP, HP series
+Sample Input:Enter the First Number 'A': 2
+             Enter the Common Difference / Ratio 'R': 3
+             Enter the number of terms 'N': 5
+Sample Output:AP = 2, 5, 8, 11, 14
+              GP = 2, 6, 18, 54, 162
+              HP = 0.500000, 0.200000, 0.125000, 0.090909, 0.071428
 */
 
 
