@@ -37,6 +37,7 @@ int main()
 int third_largest(int arr[],int size)
 {
     int lar,sec_lar,third_lar,i;
+    //to find largest number
     lar=arr[0];
     for(i=0;i<size;i++)
     {
@@ -45,7 +46,7 @@ int third_largest(int arr[],int size)
 	    lar=arr[i];
 	}
     }
-
+    //to find second largest number
     sec_lar=0;
     for(i=0;i<size;i++)
     {
@@ -54,6 +55,7 @@ int third_largest(int arr[],int size)
 	    sec_lar=arr[i];
 	}
     }
+    //to find third largest number
     third_lar=0;
     for(i=0;i<size;i++)
     {
@@ -62,5 +64,5 @@ int third_largest(int arr[],int size)
 	    third_lar=arr[i];
 	}
     }
-    return third_lar;
+    return third_lar;       //third largest number is returned
 }
