@@ -9,7 +9,7 @@ Sample Output:Second largest element of the array is 5
 
 #include <stdio.h>
 
-int sec_largest(int [], int);
+int sec_largest(int [], int);       //function declaration
 
 int main()
 {
@@ -34,18 +34,19 @@ int main()
     printf("Second largest element of the array is %d\n", ret);
 }
 
-int sec_largest(int arr[],int size)
+int sec_largest(int arr[],int size)           //function defenition
 {
     int lar,sec_lar,i;
-    lar=arr[0];
-    for(i=0;i<size;i++)
+    // to find largest element in array
+    lar=arr[0];            
+    for(i=0;i<size;i++)         
     {
 	if(lar<arr[i])
 	{
 	    lar=arr[i];
 	}
     }
-
+//to find second largest element in array
     sec_lar=0;
     for(i=0;i<size;i++)
     {
