@@ -1,6 +1,6 @@
 /*
 Name: Arun Varghese
-Date: 
+Date: 28/10/2022
 Description:Program to implement your own isalnum() function 
 Sample Input:Enter the character: a
 Sample Output:The character 'a' is an alnum character.
