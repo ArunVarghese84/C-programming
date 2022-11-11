@@ -1,0 +1,61 @@
+/*
+Name: Arun Varghese
+Date: 11/11/2022
+Description: Program to remove duplicate elements in a given array
+Sample Input: Enter the size: 5
+
+              Enter elements into the array: 5 1 3 1 5
+Sample Output:After removing duplicates: 5 1 3
+*/
+
+#include <stdio.h>
+
+void remove_duplicate(int arr1[],int arr2[], int size, int *new_size);           //function declaration
+
+int main()
+{
+    int size,new_size,i;          //variables declared
+    printf("Enter the size: ");
+    scanf("%d", &size);            //size of array is taken from user
+    int arr1[size], arr2[size];         //2 arrays of arrays both with size of 1st array is declared
+    printf("Enter elements into the array: ");            //array elements are read
+    for(i=0;i<size;i++)
+    {
+	scanf("%d", &arr1[i]);
+    }
+    remove_duplicate(arr1,arr2,size, &new_size);   //function call
+    
+    printf("After removing duplicates: ");
+    for(i=0;i<new_size;i++)             //new array with no dupilcate elements are printed
+	printf("%d ", arr2[i]);
+    
+}
+
+void remove_duplicate(int arr1[], int arr2[], int size, int *new_size)  //function defenition
+{
+    int i,j,x=1,flag=0;    //variables used in function are declared
+    arr2[0]=arr1[0];         //first element of array1 is saved into array2
+    
+    //finding whether element in the array is duplicate or not
+    for(i=0;i<size;++i)     
+    {
+	for(j=0;j<i;++j)
+	{
+	    if(arr1[i] != arr1[j])      //condition for non duplicate element
+	    {
+		flag=1;          
+	    }
+	    else                        //duplicate element
+	    {
+		flag=0;
+		break;                  //as duplicate element is found, exit inner loop
+	    }
+	}
+	if(flag==1)               //if non duplicate element
+	    {
+		arr2[x]=arr1[i];         //the element is added to 2nd array
+		x++;
+	    }
+    } 
+  *new_size=x;                   //no. of elements in 2nd array
+}
