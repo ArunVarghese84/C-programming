@@ -33,7 +33,7 @@ int main()
 
 void remove_duplicate(int arr1[], int arr2[], int size, int *new_size)  //function defenition
 {
-    int i,j,x=1,flag=0;    //variables used in function are declared
+    int i,j,x=1,flag=0;    //variables used in function are declared 
     arr2[0]=arr1[0];         //first element of array1 is saved into array2
     
     //finding whether element in the array is duplicate or not
