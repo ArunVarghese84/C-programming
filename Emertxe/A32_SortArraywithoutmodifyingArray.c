@@ -1,40 +1,74 @@
 /*
 Name: Arun Varghese
-Date:14/11/2022
-Description: Program to generate negative fibbonacci numbers using recursion
-Sample Input:Enter a number: -8
-Sample Output:0, 1, -1, 2, -3, 5, -8
+Date: 12/11/2022
+Description:Print the values in sorted order without modifying or copying array 
+Sample Input:Enter the size : 5
+             Enter 5 elements 
+             10 1 3  8 -1
+Sample Output:After sorting: -1 1 3 8 10
+              Original array values 10 1 3 8 -1
 */
 
 #include <stdio.h>
 
-void negative_fibonacci(int, int, int, int);     //function declaration
+void print_sort(int [], int);       //function declration
 
 int main()
 {
-    int limit,rev;
+    int size, iter;
 
-    printf("Enter the limit : ");            
-    scanf("%d", &limit);
- 
-    if(limit<=0)        //if limit less than 0 negative fibanocci function is called
-    negative_fibonacci(limit, 0, 1, 0);       //function call
-    else
-	printf("Invalid Input");
-    printf("\n");
+    printf("Enter the size of the array : ");
+    scanf("%d", &size);
 
-    return 0;
-}
+    int arr[size];
 
-void negative_fibonacci(int limit,int a,int b,int diff)  //function definition
-{
-    int rev=-limit;
-    if(diff>=limit && diff<=rev)     //condition for printing fibanocci
+    printf("Enter the %d elements\n", size);  //elements of array are read
+    for (iter = 0; iter < size; iter++)
     {
-	printf("%d, ", diff);
-	a=b;
-	b=diff;
-	diff=a-b;
-	negative_fibonacci(limit,a,b,diff);
+	scanf("%d", &arr[iter]);
     }
+
+    print_sort(arr, size);         //function call
+}
+void print_sort(int arr[],int size)     //function defenition
+{
+    int i,j,small,sec_small,lar;
+    printf("After sorting: ");
+    small=arr[0];         //small and large values are assigned to 0th index of array
+    lar=arr[0]; 
+    for(i=0;i<size;i++)  //smallest and largest values in arrays are found
+    {
+	if(arr[i]<small)
+	{
+	    small=arr[i];
+	}
+	if(arr[i]>lar)
+	{
+	    lar=arr[i];
+	}
+    }
+
+    printf("%d ", small);     //smallest value is printed
+
+    sec_small=lar;      //largest value is assigned to sec_small
+    for(j=0;j<size-1;j++)
+    {
+	for(i=0;i<size;i++)
+	{
+	    if(arr[i]>small && arr[i]<sec_small)     //condition to find next just largest to the last value printed
+	    {
+		sec_small=arr[i];
+	    }
+	}
+	small=sec_small;
+	sec_small=lar;
+	printf("%d " , small);       //each time smallest values are printed
+    }
+    printf("\n");
+    printf("Original array values ");
+    for(i=0;i<size;i++)       //original array values are printed
+    {
+	printf("%d ", arr[i]);
+    }
+    printf("\n");
 }
