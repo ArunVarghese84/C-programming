@@ -1,0 +1,77 @@
+/*
+Name: Arun Varghese
+Date: 22/11/2022
+Description: Program to implement itoa function
+Sample Input:Enter the number : -1234
+Sample Output:Integer to string is -1234
+*/
+
+
+#include<stdio.h>
+
+int itoa(int num,char str[]);     //function declaration
+
+int main()
+{
+    int num=0;
+    char str[20];
+
+    printf("Enter the number:");   //the number is read
+    scanf("%d", &num);
+
+    itoa(num,str);                    //function call
+
+    printf("Integer to string is %s", str);       //resultant string is printed
+}
+
+int itoa(int num,char str[])     //function definition
+{
+    int val=0,i=0,len,temp=0;
+
+    if(num>0)   //if positive number
+    {
+    for(i=0 ;num != 0; ++i)
+    {
+    val=num%10;
+    str[i]=val+48;   //each digit is stored to the string in reverse order
+    num=num/10;
+    }
+    }
+
+    else if(num<0)   //if negative number
+    {
+	num=num*-1;  //number is made positive and stored to string digit by digit in reverse
+	for(i=0; num != 0; ++i)
+	{
+	    val = num%10;
+	    str[i]=val+48;
+	    num=num/10;
+	}
+
+	str[i] = '-';  //and a - symbol is added to the end of the string
+	i++;
+
+    }
+    else    //if not a digit, 0 is saved to the string to return
+    {
+	str[i]=48;
+	i++;
+    }
+
+
+    str[i]='\0';
+
+
+    for(i=0; str[i] != '\0' ; i++){      //length of the string
+    }
+    len=i;
+   
+
+    for(i=0; i < (len/2) ; i++)     //reversing the string to get original digit in string form
+    {
+	temp=str[i];
+	str[i] = str[len-i-1];
+	str[len-i-1]=temp;
+    }
+
+}
